@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浙江省クエスト｜栃木県日中友好協会</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">中日</div>
+      <div>
+        <div class="brand-name">栃木県日中友好協会</div>
+        <div class="brand-sub">JAPAN–CHINA FRIENDSHIP ASSOCIATION OF TOCHIGI</div>
+      </div>
+    </div>
+    <button id="resetBtn" class="reset-btn" type="button">データをリセット</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">TOCHIGI × ZHEJIANG</div>
+      <h1>浙江省クエスト</h1>
+      <p>栃木から、浙江を知ろう。</p>
+      <p class="hero-note">浙江省11都市をめぐりながら、5問ずつのクイズに挑戦しよう。</p>
+    </section>
+
+    <section class="status-grid">
+      <div class="status-card">
+        <span>LEVEL</span>
+        <strong id="levelValue">Lv.1</strong>
+      </div>
+      <div class="status-card">
+        <span>EXP</span>
+        <strong id="expValue">0 EXP</strong>
+        <div class="exp-bar"><div id="expBar" class="exp-fill"></div></div>
+        <small id="nextExp">次のレベルまで 100 EXP</small>
+      </div>
+      <div class="status-card">
+        <span>訪問都市</span>
+        <strong id="visitedValue">0 / 11</strong>
+      </div>
+    </section>
+
+    <section id="homeScreen">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">CITY MAP</span>
+          <h2>浙江省の11都市</h2>
+        </div>
+        <span id="completionText" class="completion">制覇率 0%</span>
+      </div>
+      <div id="cityGrid" class="city-grid"></div>
+    </section>
+
+    <section id="quizScreen" class="screen hidden">
+      <div class="quiz-top">
+        <button id="backBtn" class="text-btn" type="button">← 都市一覧へ</button>
+        <div id="quizCityName" class="quiz-city"></div>
+      </div>
+      <div class="progress-line">
+        <span id="questionCount">第1問 / 5</span>
+        <div class="question-progress"><div id="questionBar"></div></div>
+      </div>
+      <article class="quiz-card">
+        <div class="question-number" id="questionNumber">QUESTION 01</div>
+        <h2 id="questionText"></h2>
+        <div id="choices" class="choices"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <button id="nextBtn" class="primary-btn hidden" type="button">次の問題へ</button>
+      </article>
+    </section>
+
+    <section id="resultScreen" class="screen hidden">
+      <div class="result-card">
+        <div class="result-seal">浙江</div>
+        <span class="section-kicker">QUEST COMPLETE</span>
+        <h2 id="resultTitle">杭州クエスト完了！</h2>
+        <p id="resultScore"></p>
+        <div class="result-exp" id="resultExp"></div>
+        <div id="resultBonus" class="result-bonus"></div>
+        <button id="resultHomeBtn" class="primary-btn" type="button">都市一覧へ戻る</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>栃木県日中友好協会</span>
+    <span>×</span>
+    <span>浙江省クエスト</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

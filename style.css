@@ -1,0 +1,391 @@
+:root {
+  --red: #b21f2d;
+  --red-dark: #8e1824;
+  --gold: #b28a43;
+  --navy: #263746;
+  --ink: #2e3338;
+  --muted: #6f767d;
+  --paper: #f6f4ef;
+  --white: #ffffff;
+  --line: #ddd9d0;
+  --green: #4e7864;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 85% 5%, rgba(178,138,67,.10), transparent 25%),
+    linear-gradient(180deg, #fbfaf7 0%, var(--paper) 100%);
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+button { font: inherit; }
+
+.site-header {
+  min-height: 76px;
+  padding: 14px clamp(18px, 5vw, 64px);
+  background: rgba(255,255,255,.96);
+  border-bottom: 3px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-mark, .result-seal {
+  display: grid;
+  place-items: center;
+  background: var(--red);
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 800;
+  letter-spacing: .08em;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.28);
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  font-size: 14px;
+}
+
+.brand-name {
+  font-weight: 800;
+  letter-spacing: .06em;
+  font-size: 17px;
+}
+
+.brand-sub {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: .08em;
+}
+
+.reset-btn, .text-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.reset-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.reset-btn:hover, .text-btn:hover { color: var(--red); }
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 46px 0 60px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 34px 34px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--red);
+  box-shadow: 0 8px 28px rgba(38,55,70,.06);
+}
+
+.hero::after {
+  content: "浙";
+  position: absolute;
+  right: 26px;
+  top: 8px;
+  font-family: serif;
+  font-size: 120px;
+  line-height: 1;
+  color: rgba(178,31,45,.055);
+  pointer-events: none;
+}
+
+.eyebrow, .section-kicker {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.hero h1 {
+  margin: 8px 0 2px;
+  color: var(--navy);
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: clamp(34px, 6vw, 54px);
+  letter-spacing: .04em;
+}
+
+.hero p { margin: 4px 0; }
+.hero > p:first-of-type { font-size: 18px; font-weight: 700; }
+.hero-note { color: var(--muted); font-size: 13px; }
+
+.status-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 12px;
+  margin: 18px 0 44px;
+}
+
+.status-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+  min-height: 96px;
+}
+
+.status-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .12em;
+  font-weight: 800;
+}
+
+.status-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--navy);
+  font-size: 24px;
+}
+
+.exp-bar, .question-progress {
+  height: 7px;
+  overflow: hidden;
+  background: #e8e4dc;
+  border-radius: 99px;
+}
+
+.exp-bar { margin-top: 8px; }
+
+.exp-fill {
+  height: 100%;
+  width: 0;
+  background: var(--red);
+  transition: width .3s ease;
+}
+
+.status-card small { color: var(--muted); font-size: 10px; }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  margin: 5px 0 0;
+  color: var(--navy);
+  font-family: Georgia, "Yu Mincho", serif;
+}
+
+.completion { color: var(--red); font-weight: 800; font-size: 13px; }
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.city-card {
+  position: relative;
+  text-align: left;
+  min-height: 148px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--navy);
+  background: #fff;
+  cursor: pointer;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 24px rgba(38,55,70,.10);
+}
+
+.city-card.visited { border-top-color: var(--green); }
+.city-card .jp { font-size: 25px; font-weight: 800; color: var(--navy); }
+.city-card .cn { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.city-card .tag {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  padding: 3px 7px;
+  border-radius: 99px;
+  background: #f0eee8;
+  color: var(--muted);
+  font-size: 9px;
+}
+.city-card.visited .tag { background: #e7f0eb; color: var(--green); }
+.city-card .desc { margin-top: 20px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+
+.hidden { display: none !important; }
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.quiz-city {
+  color: var(--red);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.progress-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.question-progress { flex: 1; }
+.question-progress div {
+  height: 100%;
+  width: 20%;
+  background: var(--red);
+  transition: width .25s ease;
+}
+
+.quiz-card, .result-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(38,55,70,.07);
+}
+
+.quiz-card { padding: clamp(24px, 5vw, 48px); }
+
+.question-number {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: .15em;
+  font-weight: 800;
+}
+
+.quiz-card h2 {
+  margin: 12px 0 26px;
+  color: var(--navy);
+  font-size: clamp(20px, 3vw, 28px);
+  line-height: 1.6;
+}
+
+.choices { display: grid; gap: 10px; }
+
+.choice-btn {
+  width: 100%;
+  text-align: left;
+  padding: 15px 18px;
+  background: #fbfaf7;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.choice-btn:hover { border-color: var(--gold); background: #fff; }
+.choice-btn.correct { border-color: var(--green); background: #edf5f0; }
+.choice-btn.wrong { border-color: var(--red); background: #fbebed; }
+.choice-btn:disabled { cursor: default; }
+
+.feedback {
+  margin-top: 16px;
+  padding: 14px;
+  border-left: 4px solid var(--gold);
+  background: #f8f5ec;
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.primary-btn {
+  margin-top: 18px;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--red);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.primary-btn:hover { background: var(--red-dark); }
+
+.result-card {
+  max-width: 620px;
+  margin: 40px auto;
+  padding: 42px;
+  text-align: center;
+}
+
+.result-seal {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  font-size: 18px;
+}
+
+.result-card h2 {
+  margin: 8px 0;
+  color: var(--navy);
+  font-family: Georgia, "Yu Mincho", serif;
+}
+
+.result-exp {
+  margin: 20px 0 8px;
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.result-bonus { color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 16px 40px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 850px) {
+  .city-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 650px) {
+  .site-header { align-items: flex-start; }
+  .brand-sub { display: none; }
+  .reset-btn { font-size: 11px; }
+  .container { width: min(100% - 20px, 1120px); padding-top: 20px; }
+  .hero { padding: 24px 20px 26px; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+  .status-card:nth-child(2) { grid-column: 1 / -1; }
+  .city-grid { grid-template-columns: repeat(2, 1fr); }
+  .result-card { padding: 30px 20px; }
+}
+
+@media (max-width: 420px) {
+  .city-grid { grid-template-columns: 1fr 1fr; gap: 9px; }
+  .city-card { min-height: 130px; padding: 14px; }
+  .city-card .jp { font-size: 21px; }
+  .city-card .desc { margin-top: 14px; }
+}
