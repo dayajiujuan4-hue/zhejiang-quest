@@ -85,6 +85,15 @@ function shuffle(array) {
   return copy;
 }
 
+function shuffleChoices(question) {
+  const order = shuffle(question.choices.map((_, i) => i));
+  return {
+    ...question,
+    choices: order.map(i => question.choices[i]),
+    answer: order.indexOf(question.answer)
+  };
+}
+
 function renderCities() {
   cityGrid.innerHTML = "";
 
@@ -115,7 +124,7 @@ function showHome() {
 
 function startQuiz(city) {
   currentCity = city;
-  quizQuestions = shuffle(city.questions).slice(0, 5);
+  quizQuestions = shuffle(city.questions).slice(0, 5).map(shuffleChoices);
   currentQuestionIndex = 0;
   correctCount = 0;
   quizExp = 0;
