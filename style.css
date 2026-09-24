@@ -208,29 +208,7 @@ button { font: inherit; }
   border-top: 4px solid var(--navy);
   background: #fff;
   cursor: pointer;
-  overflow: hidden;
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-.city-card .card-icon {
-  position: absolute;
-  right: -8px;
-  bottom: -8px;
-  width: 92px;
-  height: 92px;
-  color: var(--navy);
-  opacity: .11;
-  pointer-events: none;
-  transition: opacity .16s ease, color .16s ease;
-}
-
-.city-card .card-icon svg { width: 100%; height: 100%; display: block; }
-.city-card:hover .card-icon { opacity: .22; color: var(--gold); }
-.city-card.visited .card-icon { color: var(--green); }
-
-.city-card .jp, .city-card .cn, .city-card .desc, .city-card .tag {
-  position: relative;
-  z-index: 1;
 }
 
 .city-card:hover {
