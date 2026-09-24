@@ -104,6 +104,7 @@ function renderCities() {
     button.className = `city-card${visited ? " visited" : ""}`;
     button.innerHTML = `
       <span class="tag">${visited ? "訪問済み" : "未訪問"}</span>
+      <div class="card-icon">${city.icon}</div>
       <div class="jp">${city.name}</div>
       <div class="cn">${city.pinyin}</div>
       <div class="desc">${city.description}</div>
